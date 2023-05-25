@@ -6,10 +6,12 @@ export default{
 
 </script>
  
-<template lang="">
+<template>
 
     <div>
-        <h1>Footer</h1>
+
+        <h1 class="text-center py-5">Working Progress</h1>
+        
     </div>
 
 </template>
