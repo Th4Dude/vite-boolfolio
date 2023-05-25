@@ -1,19 +1,27 @@
 <script>
-import HelloApp from './components/HelloApp.vue';
+
+import AppFooter from './components/AppFooter.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
+
 export default {
   name:'App',
   components: {
-    HelloApp
+    AppFooter,
+    AppHeader,
+    AppMain,
   }
 }
+
 </script>
 
 <template>
-  <HelloApp />
+    <AppHeader></AppHeader>
+    <AppMain> </AppMain> 
+    <AppFooter></AppFooter>
 </template>
 
 
-<style lang="scss">
-//versione 1 - inclusione via app.vue
-// @use './assets/scss/main.scss' as *;
+<style>
+
 </style>
