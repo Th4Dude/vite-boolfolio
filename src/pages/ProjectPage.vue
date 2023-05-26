@@ -7,7 +7,7 @@ export default {
 
 <template>
     <section>
-      <h1 class="mt-5 mb-3">My progect</h1>
+      <h1 class="mt-5 mb-3">Project</h1>
     </section>
 </template>
 

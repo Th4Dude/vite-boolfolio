@@ -1,22 +1,36 @@
 
 <script>
 
-export default{
-    name:'AppHeader'
+export default {
+    name: 'AppHeader'
 }
 
 </script>
  
 <template>
-
     <div>
-        
-        <h1 class="text-center py-5">Project VueJs</h1>
+        <ul>
+            <li>
+            <router-link :to="{ name: 'home' }" class="nav-link">
+                Home
+            </router-link>
+        </li>
+        <li>
+            <router-link :to="{ name: 'about' }" class="nav-link">
+                About
+            </router-link>
+        </li>
+        <li>
+            <router-link :to="{ name: 'project' }" class="nav-link">
+                Projects
+            </router-link>
+        </li>
+
+
+    </ul>
+       
 
     </div>
-
 </template>
 
-<style>
-
-</style>
+<style></style>
