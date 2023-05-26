@@ -3,7 +3,7 @@ import { createWebHistory, createRouter } from 'vue-router';
 import AppHome from './pages/AppHome.vue';
 import AboutPage from './pages/AboutPage.vue';
 import ProjectPage from './pages/ProjectPage.vue';
-
+import UnknownPage from './pages/UnknownPage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -23,6 +23,11 @@ const router = createRouter({
             path: '/project',
             name: 'project',
             component: ProjectPage
+        },
+        {
+            path: '/project/:slug',
+            name: 'list',
+            component: UnknownPage
         }
 
     ]
