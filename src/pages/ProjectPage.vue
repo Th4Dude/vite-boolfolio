@@ -40,9 +40,9 @@ export default {
 
 <template>
     <section>
-      <div class="container">
+      <div class="container-fluid background_color">
           <div class="row">
-            <div class="col" v-for="project in projects">
+            <div class="col main_box py-4" v-for="project in projects">
               <CardProject :project="project" />
             </div>
           </div>
@@ -50,4 +50,17 @@ export default {
     </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+.background_color{
+  background-color: rgb(158, 234, 235);
+}
+
+
+.main_box {
+  min-height: 350px;
+}
+
+
+
+</style>
