@@ -3,7 +3,9 @@ import { createWebHistory, createRouter } from 'vue-router';
 import AppHome from './pages/AppHome.vue';
 import AboutPage from './pages/AboutPage.vue';
 import ProjectPage from './pages/ProjectPage.vue';
-import UnknownPage from './pages/UnknownPage.vue';
+import DetailPage from './pages/DetailPage.vue';
+import TypePage from './pages/TypePage.vue';
+import TechnologyPage from './pages/TechnologyPage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -27,8 +29,18 @@ const router = createRouter({
         {
             path: '/project/:slug',
             name: 'list',
-            component: UnknownPage
-        }
+            component: DetailPage
+        },
+        {
+            path: '/types/:slug',
+            name: 'type',
+            component: TypePage
+        },
+        {
+            path: '/technologies/:slug',
+            name: 'technology',
+            component: TechnologyPage
+        }  
 
     ]
 });
