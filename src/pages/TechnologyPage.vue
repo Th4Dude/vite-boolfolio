@@ -27,8 +27,8 @@ export default {
         this.$watch(
             () => this.$route.params,
             (toParams, previousParams) => {
-                /* console.log({toParams})
-                console.log({previousParams}) */
+                console.log({toParams})
+                console.log({previousParams})
                 this.getTechnology();
             }
         )
@@ -41,7 +41,6 @@ export default {
     <section v-if="technology">
         <div class="container">
             <h1 class="mt-5 mb-3">Technology Page: {{ technology.name }}</h1>
-
             <div class="row my-4 gy-4">
                 <div class="col col-md-4" v-for="project in technology.projects">
                     <CardProject :project="project" />

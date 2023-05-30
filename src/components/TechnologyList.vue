@@ -1,13 +1,15 @@
 <script>
+
 import axios from 'axios';
 import store from '../store';
+
 export default {
     name: 'TechnologyList',
     data() {
         return {
             store,
-            currentTechnology: '',
-            technologies: []
+            technologies: [],
+            currentTechnology: ''  
         }
     },
     methods: {
@@ -33,10 +35,11 @@ export default {
 
 <template>
 
-    <select class="form-select" v-if="technologies.length > 0" @change="changePage" v-model="currentTechnology">
-        <option value="" disabled>Select Technology</option>
-        <option :value="technology.slug" v-for="technology in technologies">{{ technology.name }}</option>
-    </select>
-    
-    <h1>suka blyat</h1>
+    <select class="form-select"
+
+        v-if="technologies.length > 0" @change="changePage" v-model="currentTechnology">
+            <option value="" disabled>Select Category</option>
+            <option :value="technology.slug" v-for="technology in technologies">{{ technology.name }}</option>
+        </select>
+     
 </template>

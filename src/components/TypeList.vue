@@ -36,8 +36,9 @@ export default {
 <template>
 
 <select class="form-select" 
+
     v-if="types.length > 0" @change="changePage" v-model="currentType">
-        <option value="" disabled>Select Category</option>
+        <option value="" disabled>Select Type</option>
         <option :value="type.slug" v-for="type in types">{{ type.name }}</option>
     </select>
     
