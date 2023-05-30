@@ -1,66 +1,69 @@
 <script>
-
 import axios from 'axios';
 import store from '../store';
 
-
 export default {
-    name: 'ContactPage',
-    data(){
+    name: "ContactPage",
+    data() {
         return {
-           store,
-           formData : {
-            name: '',
-            email: '',
-            message: ''
-           } 
+            store,
+            formData: {
+                name: '',
+                email: '',
+                message: ''
+            }
         }
     },
     methods: {
-            sendContact(){
-                const data = {
-                    name: this.formData.name,
-                    email: this.formData.email,
-                    message: this.formData.message,
-                };
-                axios.post(`$this.store.apiBaseUrl}/contacts`, data)
-                .then((response)=> {
+        sendContact() {
+            const data = {
+                name: this.formData.name,
+                email: this.formData.email,
+                message: this.formData.message
+            };
+
+            axios.post(`${this.store.apiBaseUrl}/contacts`, data)
+                .then((response) => {
                     console.log(response);
-                }).catch (( error )=> {
+                    // Reimposta i valori dei campi su stringhe vuote
+                    this.formData.name = '';
+                    this.formData.email = '';
+                    this.formData.message = '';
+                })
+                .catch((error) => {
                     console.log(error);
-            });
+                });
         }
     }
 }
-
 </script>
 
+
 <template>
-
-    <form @submit.prevent="sendContact">
-
-        <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name"  placeholder="Name and surname" v-model="formData.name">
+    <div class="container">
+        <h1 class="mt-5 mb-3">Contact Page</h1>
+        <form @submit.prevent="sendContact">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name and Surname</label>
+                <input type="text" class="form-control" id="name" placeholder="Name and Surname"
+                    v-model="formData.name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" v-model="formData.email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" v-model="formData.message"></textarea>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Send</button>
+            </div>
+        </form>
     </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email"  placeholder="name@example.com" v-model="formData.email">
-    </div>
-    <div class="mb-3">
-        <label for="message" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="message" rows="3" v-model="formData.message"></textarea>
-    </div>
-        <button type="button" class="btn btn-secondary">Send</button>
-    
-    </form>
-    
-
 </template>
 
 
-<style>
-
-
+<style scoped>
 
 </style>
