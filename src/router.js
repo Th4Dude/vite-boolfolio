@@ -6,6 +6,7 @@ import ProjectPage from './pages/ProjectPage.vue';
 import DetailPage from './pages/DetailPage.vue';
 import TypePage from './pages/TypePage.vue';
 import TechnologyPage from './pages/TechnologyPage.vue';
+import ContactPage from './pages/ContactPage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -40,7 +41,12 @@ const router = createRouter({
             path: '/technologies/:slug',
             name: 'technology',
             component: TechnologyPage
-        }  
+        },
+        {
+            path: '/contacts',
+            name: 'contact',
+            component: ContactPage
+        }   
 
     ]
 });

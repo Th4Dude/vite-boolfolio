@@ -33,6 +33,11 @@ export default {
                         <em>Projects</em>
                     </router-link>
                 </li>
+                <li class="px-5 py-4">
+                    <router-link :to="{ name: 'contact' }" class="nav-link">
+                        <em>Contacts</em>
+                    </router-link>
+                </li>
             </ul>
         </div>
         <div>
